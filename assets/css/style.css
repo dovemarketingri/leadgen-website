@@ -1,0 +1,674 @@
+/*
+ * Lead Generation Landing Page Styles
+ * Author: Vanessa Coles
+ * Author URL: http://vcoles.com
+ * License:
+ */
+
+ /* ------------------------------------------------------------- */
+/* Bootstrap Overrides */
+/* ------------------------------------------------------------- */
+
+/* Primary */
+
+.bg-primary
+.badge-primary {
+	background: #ff6b2f !important;
+}
+
+.text-primary {
+	color: #ff6b2f !important;
+}
+
+/* Info */
+
+.bg-info,
+.badge-info {
+	background: #167bff !important;
+}
+
+.text-info {
+	color: #167bff !important;
+}
+
+/* ------------------------------------------------------------- */
+/* Clearfix  */
+/* ------------------------------------------------------------- */
+
+.cf {
+	content: "";
+  display: table;
+  clear: both;
+}
+
+/* ------------------------------------------------------------- */
+/* Scaffolding */
+/* ------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	box-sizing: inherit;
+}
+
+body {
+	position: relative;
+	color: #333;
+	font-family: "Barlow", -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+	font-weight: normal;
+	line-height: 1.6;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	font-family: "Lato", sans-serif;
+	font-weight: 700;
+}
+
+strong {
+	font-weight: 700;
+	font-weight: 900;
+}
+
+/*
+ * Responsive images
+ */
+
+img {
+	display: block;
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+}
+
+/*
+ * Helper classes
+ */
+
+.flex { /* Create new flex class to replace Bootstrap .d-flex. */
+	display: flex !important;
+}
+
+.v-center { /* Horizonally and vertically center content. */
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+}
+
+/* ------------------------------------------------------------- */
+/* Elements */
+/* ------------------------------------------------------------- */
+
+/*
+ * Buttons
+ * Override Bootstrap defaults
+ */
+
+.btn {
+	padding: .95em 2.25em; /* 15px 36px */
+	font-size: .938em;
+	font-weight: 700;
+	text-transform: uppercase;
+	border-radius: 2px;
+	outline: none;
+	box-shadow: none;
+}
+
+.btn-primary {
+	background: #ff6b2f;
+ 	border-color: #ff6b2f;
+}
+
+.btn-primary:hover {
+	background: #ff530d;
+	border-color: #ff530d;
+}
+
+.btn-info {
+	background: #167bff;
+	border-color: #167bff;
+}
+
+.btn-info:hover {
+	background: #005bd1;
+	border-color: #005bd1;
+}
+
+/* ------------------------------------------------------------- */
+/* Layout */
+/* ------------------------------------------------------------- */
+
+.container {
+	max-width: 1400px; /* Increase content width. */
+}
+
+.container,
+.row {
+	height: 100% !important;
+}
+
+.section {
+	position: relative;
+	padding: 7.5em 0;
+}
+
+.container_no-pad,
+.section_no-pad {
+	padding: 0;
+}
+
+.section-header {
+	margin-bottom: 5em;
+	text-align: center;
+}
+
+/* ------------------------------------------------------------- */
+/* Header | Top Content */
+/* ------------------------------------------------------------- */
+
+.top-bar {
+	padding: .75em 0;
+	color: rgba(255,255,255,.75);
+	background: #111;
+}
+
+.site-header {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	background: #fff;
+/*	border-top: 7px solid #167bff; */
+	border-bottom: 7px solid rgba(0,0,0,.15);
+	box-shadow: 0 3px 15px rgba(0,0,0,.15);
+	z-index: 999;
+}
+
+.logo {
+	margin: 0;
+	font-size: 1.35em;
+}
+
+a.logo {
+	color: #222;
+}
+
+/*
+ * Navigation
+ */
+
+.navbar {
+	padding: .75em 0;
+}
+
+.navbar-brand {
+	display: inline-block;
+	position: relative;
+}
+
+/* The menu */
+
+.nav-item {
+	margin: 0 1em;
+}
+
+.nav-link {
+	color: rgba(0,0,0,.65);
+	text-transform: uppercase;
+	font-weight: 700;
+	transition: all .3s ease-in-out;
+}
+
+/*
+.nav-item.active .nav-link {
+	color: #4793ff;
+}
+*/
+
+.nav-link:hover {
+	color: #4793ff;
+}
+
+.btn-find-agent {
+	padding: 0.750em 2em;
+}
+
+/*
+ * Section - Hero
+ */
+
+.hero {
+	position: relative;
+	width: 100%;
+	min-height: 95vh;
+	height: 100%;
+	background: url('../img/business-woman-alt_cropped.jpg') center top no-repeat;
+	background-size: cover;
+}
+
+.hero::before {
+	display: block;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: #164277;
+	opacity: .35;
+}
+
+.hero .container,
+.hero .hero-content,
+.hero .hero-content .row {
+	min-height: inherit; /* Inherit min-height from parent container. */
+}
+
+.hero-content {
+	position: relative;
+	height: 100%;
+	z-index: 5;
+}
+
+.hero-title {
+	margin-top: 0;
+	color: #fff;
+	font-family: "Lato", sans-serif;
+	font-size: 3.3em;
+	font-weight: 900;
+	letter-spacing: -.5px;
+}
+
+/* ------------------------------------------------------------- */
+/* Main Content */
+/* ------------------------------------------------------------- */
+
+/*
+ * Section - Info
+ */
+
+.section-info .row {
+	position: relative;
+}
+
+.info-box-wrapper {
+	background: #111;
+}
+
+/*
+.info-box-wrapper:hover {
+	background: #138496;
+}
+*/
+
+.sliding-hover-effect {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background: #138496;
+	z-index: -1;
+}
+
+.info-box {
+	padding: 5.5em 3em;
+	height: 100%;
+}
+
+.info-icon-svg {
+	margin-bottom: 1.5em;
+	max-width: 64px;
+	width: 100%;
+	color: #ff6b2f;
+}
+
+.info-box:hover .info-icon-svg {
+	color: #fff;
+}
+
+.info-title {
+	margin-bottom: 1em;
+	color: #fff;
+	font-size: 1.2em;
+	text-transform: uppercase;
+}
+
+.info-text {
+	margin-bottom: 0;
+	color: rgba(255,255,255,.45);
+}
+
+.info-box:hover .info-text {
+	color: rgba(255,255,255,.65);
+}
+
+/*
+ * Section - Rating
+ */
+
+.rating-content {
+	text-align: center;
+}
+
+.rating-icon-svg {
+	margin: 0 auto 1.75em;
+	max-width: 150px;
+	width: 100%;
+}
+
+.rating-text {
+	margin-bottom: 3em;
+}
+
+.rating-header {
+	margin-bottom: 1em;
+}
+
+/*
+ * Section - Sellers, Buyers
+ */
+
+.section-sellers,
+.section-buyers {
+	background: #f2f2f2;
+}
+
+.sellers-img,
+.buyers-img {
+	width: 100%;
+	min-height: 500px;
+	height: 100%;
+	background-size: cover;
+}
+
+.sellers-content,
+.buyers-content {
+	margin: 7.5em 0;
+	padding: 0 6em;
+}
+
+.sellers-heading,
+.buyers-heading {
+	margin-bottom: .35em;
+	color: #444;
+	font-size: 1.55em;
+	font-weight: 900;
+}
+
+.sellers-lead,
+.buyers-lead {
+	color: rgba(0,0,0,.5);
+	font-family: "Lato", sans-serif;
+	font-weight: 700;
+	margin-bottom: 1.5em;
+}
+
+.sellers-label,
+.buyers-label {
+	display: inline-block;
+	padding: .25em .5em;
+	margin-bottom: 2.5em;
+	font-size: 100%;
+	font-family: "Lato", sans-serif;
+	font-size: 1.25em;
+	font-weight: 900;
+	text-transform: uppercase;
+	border-radius: 2px;
+}
+
+/*
+ * Section - Plans
+ */
+
+.section-plans {
+	overflow: hidden;
+}
+
+.section-plans .section-title {
+	margin-bottom: 1em;
+	color: #fff;
+}
+
+.section-plans .section-tagline {
+	color: rgba(255,255,255,.65);
+}
+
+.section-plans {
+	background: url('../img/business-people-blurred.jpg') center top no-repeat;
+	background-size: cover;
+}
+
+.section-plans::before {
+	display: block;
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #1e2e39;
+	opacity: .75;
+	z-index: 5;
+}
+
+.section-plans .container {
+	position: relative;
+	z-index: 10;
+}
+
+/* Plan Card */
+
+.plan-card {
+	border: none;
+/*	box-shadow: 0 3px 10px 3px rgba(0,0,0,.25); */
+}
+
+.plan-card:hover {
+/*	box-shadow: 0 7px 20px 7px rgba(0,0,0,.3); */
+}
+
+/* Card header */
+
+.plan-card-header {
+	padding: 4em 0;
+	color: #f2f2f2;
+	text-align: center;
+	background: #222;
+	border-bottom: none;
+}
+
+.plan-card-hover .plan-card-header {
+	background: #ff6b2f;
+}
+
+.plan-price {
+	font-family: "Lato", sans-serif;
+	font-size: 4.5em;
+	font-weight: 700;
+}
+
+.plan-price-sm  {
+	font-size: ;
+	text-transform: uppercase;
+	font-weight: 900;
+	letter-spacing: 1.5px;
+}
+
+.plan-card-body {
+	padding: 2.25em 2.75em;
+	color: #555;
+	background: #f2f2f2;
+}
+
+.plan-card-hover .plan-card-body {
+	background: #fff;
+}
+
+.plan-card-body h4 {
+	margin-bottom: 1em;
+	font-size: 1.25em;
+	font-weight: 900;
+}
+
+/* Card list items */
+
+.plan-details {
+	margin: 0;
+	padding: 0;
+}
+
+.plan-details:first-child {
+	margin-bottom: 2em;
+}
+
+.plan-details li {
+	position: relative;
+	margin-bottom: 1em;
+	font-size: 1.1em;
+	list-style: none;
+}
+
+.plan-details li::before {
+	display: inline-block;
+	content: "\f120";
+	top: 0;
+	left: 0;
+	margin-right: 1em;
+	color: #60963a;
+	font-family: "Ionicons";
+}
+
+.plan-details-extra li {
+	font-weight: 700;
+}
+
+/* Plan footer */
+
+.plan-card-footer {
+	padding: 0;
+}
+
+.plan-card-footer .btn-cta {
+	padding-top: 1.25em;
+	padding-bottom: 1.25em;
+}
+
+/*
+ * Section - Contact
+ */
+
+.section-contact {
+	position: relative;
+	padding: 3em 0;
+	background: #1c7aff;
+}
+
+.contact-heading {
+	color: #fff;
+}
+
+/* ------------------------------------------------------------- */
+/* Footer */
+/* ------------------------------------------------------------- */
+
+.site-footer {
+	color: rgba(255,255,255,.25);
+	font-size: .95em;
+	background: #111;
+}
+
+.footer-content {
+	margin-bottom: 3.75em;
+	padding: 4.5em 0;
+	border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.footer-logo a {
+	text-decoration: none;
+}
+
+.footer-widget-title {
+	margin-bottom: 1.25em;
+	color: #fff;
+	font-size: 1.25em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.footer-ul {
+	margin: 0;
+	padding: 0;
+}
+
+.footer-li {
+	list-style: none;
+}
+
+.footer-link {
+	color: rgba(255,255,255,.7);
+	text-decoration: none;
+}
+
+.footer-link:hover {
+	color: rgba(255,255,255,.85);
+}
+
+.footer-logo a {
+	color: #fff;
+}
+
+.disclaimer-text,
+.copyrigh-text {
+	margin: 0;
+}
+
+.copyright {
+	padding: 2em 0;
+}
+
+/* ------------------------------------------------------------- */
+/* Media Queries */
+/* ------------------------------------------------------------- */
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199px) {
+
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991px) {
+
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767px) {
+
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+
+}

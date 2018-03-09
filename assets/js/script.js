@@ -48,7 +48,7 @@ $(document).ready(function() {
 	})();
 
 	// Smooth scroll to anchor links
-	let scrollLink = new SmoothScroll('a[href*="#"]', {
+	let scrollLink = new SmoothScroll('a[href*="#"], [data-scroll]', {
 		speed: 600,
 		offset: 75
 	});

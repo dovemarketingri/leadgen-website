@@ -13,9 +13,11 @@
     <!-- Bootstrap Core -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Barlow:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-    <!-- Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Barlow:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Lato:300,300i,400,400i,700,700i,900,900i">
+    <!-- Icons to add locally later
     <link rel="stylesheet" href="assets/icons/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="assets/icons/ionicons/css/ionicons.min.css">
+    -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/normalize.css">
@@ -29,6 +31,11 @@
 
     <div id="site">
 
+      <!-- Back to top button -->
+      <button class="back-to-top btn">
+        <i class="ion-arrow-up-c"></i>
+      </button>
+
       <!-- Begin Header -->
       <header class="site-header" id="header" role="banner">
         <!-- Begin Top Bar -->
@@ -41,8 +48,8 @@
             </div>
           </div>
         </div>
-        <div class="container">
-          <div class="navigation">
+        <div class="navigation">
+          <div class="container">
             <nav class="navbar navbar-expand-lg">
               <div class="row w-100 mx-0">
                 <!-- Logo -->
@@ -55,19 +62,19 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                      <a href="" class="nav-link">Home</a>
+                      <a href="#" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                      <a href="" class="nav-link">Sellers</a>
+                      <a href="#sectionSellers" class="nav-link">Sellers</a>
                     </li>
                     <li class="nav-item">
-                      <a href="" class="nav-link">Buyers</a>
+                      <a href="#sectionBuyers" class="nav-link">Buyers</a>
                     </li>
                     <li class="nav-item">
-                      <a href="" class="nav-link">Get Started</a>
+                      <a href="#sectionPlans" class="nav-link">Get Started</a>
                     </li>
                   </ul>
-                  <a href="" class="btn-find-agent btn btn-primary ml-4">Find an Agent</a>
+                  <a href="#sectionContact" class="btn-find-agent btn btn-primary ml-4">Find an Agent</a>
                 </div>
               </div>
             </nav>
@@ -84,7 +91,7 @@
               <div class="col-md-8">
                 <div class="hero-message">
                   <h1 class="hero-title">Discover the Best Real Estate Agents at the Lowest Cost to You!</h1>
-                  <button class="btn-show-me btn btn-info btn-lg">Show Me How</button>
+                  <button class="btn-show-me btn btn-info btn-lg" data-target="mainArea">Show Me How</button>
                 </div>
               </div>
             </div>
@@ -142,8 +149,8 @@
         <!-- Begin Section - Selling -->
         <section class="section_no-pad section-sellers" id="sectionSellers">
           <div class="container-fluid container_no-pad">
-            <div class="row flex align-items-stretch">
-              <div class="col-lg-6 p-0 flex">
+            <div class="row flex align-items-stretch mx-0">
+              <div class="col-lg-6 p-0">
                 <div class="sellers-img" style="background: url('assets/img/real-estate-agent.jpg'); background-size: cover;" data-description="Real Estate Agent with Clients">
                   <span class="sr-only">
                     <p>An image a real estate agent with his clients.</p>
@@ -152,9 +159,11 @@
               </div>
               <div class="col-lg-6 flex v-center">
                 <div class="sellers-content">
-                  <p class="sellers-label badge-info">Sellers</p>
+                  <p class="sellers-label badge">Sellers</p>
                   <h3 class="sellers-heading">Interested in Selling Your Home?  We've Got You Covered!</h3>
+                  <!--
                   <p class="sellers-lead lead">Our Agents are Experts at Selling Homes for the Right Price</p>
+                  -->
                   <p class="sellers-text">This fabulous Oak Bay is only one block from the Avenue with all the Trendy Shoppes,Fabulous Restaurants and only seconds to the Beach. The downstairs has a great layout with in-suite laundry, unique hardwoods &amp; granite island, plus even space left over for your piano! This is a prestigious home.</p>
                   <button class="btn btn-primary mt-4">Get Started Today</button>
                 </div>
@@ -167,12 +176,14 @@
         <!-- Begin Section - Buying -->
         <section class="section_no-pad section-buyers" id="sectionBuyers">
           <div class="container-fluid container_no-pad">
-            <div class="row flex align-items-stretch">
+            <div class="row flex align-items-stretch mx-0">
               <div class="col-lg-6 flex v-center">
                 <div class="buyers-content">
-                  <p class="buyers-label badge-info">Buyers</p>
+                  <p class="buyers-label badge">Buyers</p>
                   <h3 class="buyers-heading">In the Market for a New Home?  Let Us Help You Find Your Dream Home!</h3>
+                  <!--
                   <p class="buyers-lead lead">Our Agents Will Point You in the Right Direction</p>
+                  -->
                   <p class="buyers-text">This fabulous Oak Bay is only one block from the Avenue with all the Trendy Shoppes,Fabulous Restaurants and only seconds to the Beach. The downstairs has a great layout with in-suite laundry, unique hardwoods &amp; granite island, plus even space left over for your piano! This is a prestigious home.</p>
                   <button class="btn btn-primary mt-4">Get Started Today</button>
                 </div>
@@ -316,18 +327,17 @@
           <div class="container">
             <div class="contact-content">
               <div class="row flex align-items-center">
-
-                    <div class="col-md-8">
-                      <div class="contact-text">
-                        <h4 class="contact-heading mb-0">Get in Touch with Some of the Top Real Estate Agents in the Nation Today.</h4>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="contact-cta">
-                        <button class="btn-contact btn btn-lg btn-block btn-light">Contact a Qualified Agent</button>
-                      </div>
-                    </div>
-
+                <div class="col-md-8">
+                  <div class="contact-text mr-5">
+                    <h4 class="contact-heading">Get in Touch with Some of the Top Real Estate Agents in the Nation Today.</h4>
+                    <p class="contact-text lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="contact-cta">
+                    <button class="btn-contact btn btn-lg btn-block btn-primary">Contact a Qualified Agent</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -345,7 +355,7 @@
               <!-- Footer Logo -->
               <div class="col-md-8">
                 <div class="footer-logo">
-                  <h3><a href="#">Agent Finder</a></h3>
+                  <h3><a href="#">RI Agent Finder</a></h3>
                 </div>
               </div>
               <!-- Footer Links -->
@@ -367,7 +377,7 @@
                     <!-- Footer Widget -->
                     <div class="col-md-6">
                       <div class="footer-widget">
-                        <h4 class="footer-widget-title">Site</h4>
+                        <h4 class="footer-widget-title">Site Info</h4>
                         <ul class="footer-ul">
                           <li class="footer-li"><a href="" class="footer-link">Privacy Policy</a></li>
                           <li class="footer-li"><a href="" class="footer-link">Terms of Use</a></li>
@@ -415,6 +425,9 @@
     <!-- Bootstrap Core -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Vendor -->
+    <script src="assets/js/vendor/smooth-scroll.polyfills.min.js"></script>
+    <script src="assets/js/vendor/smooth-scroll.min.js"></script>
     <!-- Scripts -->
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>

@@ -136,7 +136,8 @@ img {
  	border-color: #ff6b2f;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:active {
 	background: #ff530d;
 	border-color: #ff530d;
 }
@@ -146,7 +147,8 @@ img {
 	border-color: #167bff;
 }
 
-.btn-info:hover {
+.btn-info:hover,
+.btn-info:active {
 	background: #005bd1;
 	border-color: #005bd1;
 }
@@ -154,6 +156,10 @@ img {
 /* ------------------------------------------------------------- */
 /* Layout */
 /* ------------------------------------------------------------- */
+
+.site {
+	position: relative;
+}
 
 .container {
 	max-width: 1400px; /* Increase content width. */
@@ -183,6 +189,17 @@ img {
 /* Header | Top Content */
 /* ------------------------------------------------------------- */
 
+.back-to-top {
+	position: fixed;
+	bottom: 35px;
+	right: 35px;
+	padding: .35em .65em;
+	color: #fff;
+	font-size: 1.75em;
+	background: #2279ff;
+	z-index: 999999;
+}
+
 .top-bar {
 	padding: .75em 0;
 	color: rgba(255,255,255,.75);
@@ -197,8 +214,6 @@ img {
 	width: 100%;
 	background: #fff;
 /*	border-top: 7px solid #167bff; */
-	border-bottom: 7px solid rgba(0,0,0,.15);
-	box-shadow: 0 3px 15px rgba(0,0,0,.15);
 	z-index: 999;
 }
 
@@ -214,6 +229,13 @@ a.logo {
 /*
  * Navigation
  */
+
+.navigation {
+	width: 100%;
+	background: #fff;
+	border-bottom: 7px solid rgba(0,0,0,.15);
+	box-shadow: 0 3px 15px rgba(0,0,0,.15);
+}
 
 .navbar {
 	padding: .75em 0;
@@ -249,6 +271,14 @@ a.logo {
 
 .btn-find-agent {
 	padding: 0.750em 2em;
+}
+
+/* Sticky nav */
+
+.fixed-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
 }
 
 /*
@@ -321,19 +351,21 @@ a.logo {
 }
 */
 
-.sliding-hover-effect {
+.slider {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 0;
 	height: 100%;
-	background: #138496;
-	z-index: -1;
+	background: #2279ff;
+	z-index: 1;
 }
 
 .info-box {
-	padding: 5.5em 3em;
+	position: relative;
+	padding: 7.5em 3em;
 	height: 100%;
+	z-index: 5;
 }
 
 .info-icon-svg {
@@ -404,37 +436,52 @@ a.logo {
 
 .sellers-content,
 .buyers-content {
+	width: 80%;
 	margin: 7.5em 0;
-	padding: 0 6em;
-}
-
-.sellers-heading,
-.buyers-heading {
-	margin-bottom: .35em;
-	color: #444;
-	font-size: 1.55em;
-	font-weight: 900;
-}
-
-.sellers-lead,
-.buyers-lead {
-	color: rgba(0,0,0,.5);
-	font-family: "Lato", sans-serif;
-	font-weight: 700;
-	margin-bottom: 1.5em;
 }
 
 .sellers-label,
 .buyers-label {
 	display: inline-block;
-	padding: .25em .5em;
+	padding: .75em 1.25em;
 	margin-bottom: 2.5em;
+	color: #1c7aff;
 	font-size: 100%;
 	font-family: "Lato", sans-serif;
-	font-size: 1.25em;
+	font-size: 1em;
 	font-weight: 900;
 	text-transform: uppercase;
+	background: #d7e7ff;
 	border-radius: 2px;
+	transition: all .3s ease-in-out;
+}
+
+.section-sellers:hover .sellers-label,
+.section-buyers:hover .buyers-label {
+	color: #fff;
+	background: #1c7aff;
+}
+
+.sellers-heading,
+.buyers-heading {
+	margin-bottom: 1.1em;
+	color: #444;
+	font-size: 1.55em;
+	font-weight: 900;
+	line-height: 1.45;
+}
+
+.sellers-lead,
+.buyers-lead {
+	color: rgba(0,0,0,.65);
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	margin-bottom: 1.5em;
+}
+
+.sellers-text,
+.buyers-text {
+	color: #666;
 }
 
 /*
@@ -498,6 +545,11 @@ a.logo {
 	text-align: center;
 	background: #222;
 	border-bottom: none;
+	transition: all .3s ease-in-out;
+}
+
+.plan-card:hover .plan-card-header {
+	background: #2279ff;
 }
 
 .plan-card-hover .plan-card-header {
@@ -521,6 +573,12 @@ a.logo {
 	padding: 2.25em 2.75em;
 	color: #555;
 	background: #f2f2f2;
+	transition: all .3s ease-in-out;
+}
+
+.plan-card:hover .plan-card-body {
+	color: #fff;
+	background: #2279ff;
 }
 
 .plan-card-hover .plan-card-body {
@@ -559,6 +617,11 @@ a.logo {
 	margin-right: 1em;
 	color: #60963a;
 	font-family: "Ionicons";
+	transition: all .3s ease-in-out;
+}
+
+.plan-card:hover .plan-details li:before {
+	color: #fff;
 }
 
 .plan-details-extra li {
@@ -576,18 +639,33 @@ a.logo {
 	padding-bottom: 1.25em;
 }
 
+.plan-card:hover .btn-cta {
+	color: #ff6b2f;
+	background: #fff;
+	border-color: #fff;
+	outline: none;
+	box-shadow: none;
+}
+
 /*
  * Section - Contact
  */
 
 .section-contact {
 	position: relative;
-	padding: 3em 0;
-	background: #1c7aff;
+	padding: 3.5em 0;
+	background: #191919;
 }
 
 .contact-heading {
-	color: #fff;
+	margin-bottom: 1em;
+	color: #f2f2f2;
+}
+
+.contact-text {
+	margin-bottom: 0;
+	color: rgba(255,255,255,.25);
+	line-height: 1.45;
 }
 
 /* ------------------------------------------------------------- */
@@ -603,7 +681,7 @@ a.logo {
 .footer-content {
 	margin-bottom: 3.75em;
 	padding: 4.5em 0;
-	border-bottom: 1px solid rgba(255,255,255,.1);
+	border-bottom: 1px solid rgba(255,255,255,.03);
 }
 
 .footer-logo a {
@@ -611,11 +689,23 @@ a.logo {
 }
 
 .footer-widget-title {
-	margin-bottom: 1.25em;
+	position: relative;
+	margin-bottom: 2em;
 	color: #fff;
 	font-size: 1.25em;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+}
+
+.footer-widget-title::after {
+	display: block;
+	content: "";
+	position: absolute;
+	bottom: -15px;
+	left: 0;
+	width: 50px;
+	height: 4px;
+	background: #2778ff;
 }
 
 .footer-ul {
@@ -624,16 +714,18 @@ a.logo {
 }
 
 .footer-li {
+	margin-bottom: .5em;
 	list-style: none;
 }
 
 .footer-link {
-	color: rgba(255,255,255,.7);
-	text-decoration: none;
+	color: rgba(255,255,255,.5);
+	transition: all .3s ease-in-out;
 }
 
 .footer-link:hover {
 	color: rgba(255,255,255,.85);
+	text-decoration: none;
 }
 
 .footer-logo a {
@@ -641,8 +733,9 @@ a.logo {
 }
 
 .disclaimer-text,
-.copyrigh-text {
+.copyright-text {
 	margin: 0;
+	color: rgba(255,255,255,.15);
 }
 
 .copyright {

@@ -10,49 +10,77 @@
 // jQuery plugins here
 $(document).ready(function() {
 
+	// Sticky navigation
 	(function() {
+		const navigation = $('.navigation');
 		const topBar = $('.top-bar');
-		const body = $('body');
+		let topBarHeight = topBar.outerHeight();
 
-		// Get the top bar height
-		topBarHeight = topBar.outerHeight();
-
-		// Add a padding to body to align with top of header
-		body.css('paddingTop', topBarHeight);
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > topBarHeight) {
+				navigation.addClass('fixed-nav');
+			} else {
+				navigation.removeClass('fixed-nav');
+			}
+		});
 	})();
 
+	// Back to top button
+	(function() {
+		const backToTop = $('.back-to-top');
+		let offset = 300;
+		let duration = 500;
+
+		// Show/hide the button
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > offset) {
+				backToTop.fadeIn(duration);
+			} else {
+				backToTop.fadeOut(duration);
+			}
+		});
+
+		// Animate scroll to top
+		backToTop.click(function() {
+			$('html, body').animate({scrollTop: 0}, 600);
+			return false;
+		});
+	})();
+
+	// Smooth scroll to anchor links
+	let scrollLink = new SmoothScroll('a[href*="#"]', {
+		speed: 600,
+		offset: 75
+	});
 
 	/*
 	 * Info box sliding hover effect
 	 * Inspired by @link http://jsfiddle.net/5wPQa/2/
 	 */
 	(function() {
-
-		// Cache the row containing the info-boxes
+		// Cache info boxes container and add slider element
 		const infoWrap = $('.section-info .row');
-		// Cache slider
-		const slideEffect = $('.sliding-hover-effect');
-		// Cache info boxes and get the first box and reset
-		const infoBoxes = infoWrap.children();
-		const firstInfoBox = infoWrap.children('.info-box-wrapper:first-child');
-		const left = firstInfoBox.parent().position().left; // 0
+		infoWrap.append('<div class="slider"></div>');
+
+		const slider = $('.slider');
+
+		// Cache infoboxes
+		const infoBoxes = infoWrap.children(); // $('.info-box-wrapper')
+		const firstInfoBox = infoBoxes.first();
+
+		// Get the initial position
+		let left = firstInfoBox.position().left; // 0
 		let width = firstInfoBox.width();
 
-		// Log values to console
-		console.log(left, width);
-
-		// Add a new element for slider
-		infoWrap.append('<div class="sliding-hover-effect"></div>');
-
 		// Set initial slider position
-		slideEffect.css({'left' : left, 'width' : width});
+		slider.css({'left' : left, 'width' : width});
 
 		// Slide effect animation
 		infoBoxes.mouseenter(function() {
-			let left = $(this).parent().position().left;
+			let left = $(this).position().left;
 			let width = $(this).width();
 
-			slideEffect.stop().animate({
+			slider.stop().animate({
 				'left' : left,
 				'width' : width
 			});

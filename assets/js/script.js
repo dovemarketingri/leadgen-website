@@ -57,6 +57,8 @@ $(document).ready(function() {
 	 * Info box sliding hover effect
 	 * Inspired by @link http://jsfiddle.net/5wPQa/2/
 	 */
+
+	/*
 	(function() {
 		// Cache info boxes container and add slider element
 		const infoWrap = $('.section-info .row');
@@ -87,5 +89,6 @@ $(document).ready(function() {
 		});
 
 	})();
+	*/
 
 });

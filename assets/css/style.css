@@ -246,6 +246,11 @@ a.logo {
 	position: relative;
 }
 
+.navbar-toggler {
+	padding: .5em;
+	border-radius: 0;
+}
+
 /* The menu */
 
 .nav-item {
@@ -363,32 +368,29 @@ a.logo {
 
 .info-box {
 	position: relative;
-	padding: 7.5em 3em;
+	padding: 6.5em 3em;
 	height: 100%;
+	text-align: center;
 	z-index: 5;
 }
 
-.info-icon-svg {
-	margin-bottom: 1.5em;
+.info-icon-wrapper {
+	margin: 0 auto .5em auto;
 	max-width: 64px;
 	width: 100%;
 	color: #ff6b2f;
-}
-
-.info-box:hover .info-icon-svg {
-	color: #fff;
+	font-size: 2.5em;
 }
 
 .info-title {
 	margin-bottom: 1em;
 	color: #fff;
 	font-size: 1.2em;
-	text-transform: uppercase;
 }
 
 .info-text {
 	margin-bottom: 0;
-	color: rgba(255,255,255,.45);
+	color: rgba(255,255,255,.65);
 }
 
 .info-box:hover .info-text {
@@ -498,7 +500,14 @@ a.logo {
 }
 
 .section-plans .section-tagline {
-	color: rgba(255,255,255,.65);
+	color: rgba(255,255,255,.85);
+}
+
+.section-plans .section-tagline small {
+	display: block;
+	margin-top: 1em;
+	color: rgba(255,255,255,.35);
+	font-style: italic;
 }
 
 .section-plans {
@@ -630,8 +639,19 @@ a.logo {
 
 /* Plan footer */
 
+.plan-card .card-footer {
+	border-top: none;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
 .plan-card-footer {
 	padding: 0;
+}
+
+.plan-card-footer .btn {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
 
 .plan-card-footer .btn-cta {
@@ -663,9 +683,12 @@ a.logo {
 }
 
 .contact-text {
-	margin-bottom: 0;
+	margin: 0 4em 0 0;
 	color: rgba(255,255,255,.25);
-	line-height: 1.45;
+}
+
+.contact-heading {
+	line-height: 1.5;
 }
 
 /* ------------------------------------------------------------- */
@@ -749,10 +772,63 @@ a.logo {
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199px) {
 
+	/* Navigation */
+
+	.navbar-nav {
+		margin-top: 1em;
+	}
+
+	.navbar-nav li {
+		margin-left: 0;
+		margin-bottom: 12px;
+	}
+
+	.
+
+	/* Section - Plans */
+
+	.plan-card {
+		margin-bottom: 3em;
+	}
+
+	.plan-card-last {
+		margin-bottom: 0;
+	}
+
 }
 
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991px) {
+
+	/* Section - Info */
+
+	.info-box {
+		padding-top: 3em;
+		padding-bottom: 3em;
+	}
+
+	/* Section - Contact */
+
+	.contact-content {
+		margin: auto;
+		width: 75%;
+	}
+
+	.contact-text {
+		margin-right: 0;
+		margin-bottom: 3em;
+		text-align: center;
+	}
+
+	/* Footer */
+
+	.footer-links .col-md-6 {
+		margin-bottom: 2em;
+	}
+
+	.footer-links .col-md-6:last-child {
+		margin-bottom: 0;
+	}
 
 }
 
